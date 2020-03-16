@@ -1,4 +1,4 @@
-package com.example.jmsreader;
+package cl.fonasa.push.config;
 
 
 
@@ -13,13 +13,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
-import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.support.destination.DestinationResolver;
 import org.springframework.jms.support.destination.JndiDestinationResolver;
 import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.jndi.JndiTemplate;
-
-import com.listener.FirstJmsConsumer;
 
 @Configuration
 public class AppConfig {
@@ -43,7 +40,7 @@ public class AppConfig {
     
     @Autowired
     @Bean
-    public DefaultJmsListenerContainerFactory myFactory(ConnectionFactory connectionFactory, DestinationResolver destination) {
+    public DefaultJmsListenerContainerFactory factoryJms(ConnectionFactory connectionFactory, DestinationResolver destination) {
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
         factory.setConnectionFactory(connectionFactory);
         factory.setDestinationResolver(destination);

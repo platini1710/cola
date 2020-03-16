@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+        <title>WebSocket Progress</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript"src="websocket.js"/></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body   >
+
+<h2>Alert Messages</h2>
+
+<p>Click on the "x" symbol to close the alert message.</p>
+
+    <section  class="container"">
+        <h1>WebSocket Progress</h1>
+        <div>
+            <div class="progress-container">
+                <form id="form">
+                    <input id="btnSubmit" type="button" value="start" onclick="formSubmit();"/>
+                    <div class="alert" id="msg">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+</div>
+                    <progress id="progress" value="0" max="100"></progress>
+                    <label for="progress" id="lblProgress"></label>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

@@ -12,7 +12,7 @@
 	</wls:container-descriptor>
 
 
-	<wls:context-root>jmsreader</wls:context-root>
+	<wls:context-root>pushJmsFonasa</wls:context-root>
 
 
 </wls:weblogic-web-app>

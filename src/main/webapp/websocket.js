@@ -3,7 +3,7 @@
 
 function fetchAPI(){
 
-	fetch('http://10.11.134.46:7001/ProgressWebSocket/rest/jms/consumeQueue/')
+	fetch('http://10.11.134.46:7001/pushJmsFonasa/rest/jms/consumeQueue/')
 	  .then(
 			    function(response) {
 			      if (response.status !== 200) {
@@ -26,7 +26,10 @@ function fetchAPI(){
 async function logFetch(url) {
 	  try {
 	    const response = await fetch(url);
-	    console.log(await response.text());
+	    if ((await response.text())=="ok") {
+	    alert("respuesta enviada")
+	  }
+	   // console.log(await response.text());
 	  }
 	  catch (err) {
 	    console.log('fetch failed', err);
@@ -35,7 +38,7 @@ async function logFetch(url) {
 
 
 function timeout() {
-	logFetch('http://10.11.134.46:7001/ProgressWebSocket/rest/jms/consumeQueue?user=augusto');
+	logFetch('http://10.11.134.46:7001/pushJmsFonasa/rest/jms/consumeQueue?user=augusto');
     setTimeout(function () {
         // Do Something Here
         // Then recall the parent function to

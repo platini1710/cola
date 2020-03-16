@@ -1,4 +1,4 @@
-package com.example.jmsreader;
+package cl.fonasa.push.main;
 
 import javax.jms.ConnectionFactory;
 
@@ -12,10 +12,10 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
 
-@SpringBootApplication(scanBasePackages = { "com.example" }, exclude = JmxAutoConfiguration.class)
+@SpringBootApplication(scanBasePackages = { "cl.fonasa.push" }, exclude = JmxAutoConfiguration.class)
 
 @EnableJms
-public class JmsreaderApplication {
+public class JmsReaderConsumerApplication {
 
 	@Bean
 	public JmsListenerContainerFactory<?> jmsListenerContainerFactory(ConnectionFactory connectionFactory,
@@ -28,7 +28,7 @@ public class JmsreaderApplication {
 	public static void main(String[] args) {
 		// SpringApplication.run(JmsreaderApplication.class, args);
 
-		ConfigurableApplicationContext context = SpringApplication.run(JmsreaderApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(JmsReaderConsumerApplication.class, args);
 
 	}
 

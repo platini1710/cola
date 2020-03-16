@@ -1,4 +1,4 @@
-package com.example.jmsreader;
+package cl.fonasa.push.test;
 
 
 public class JmsreaderApplicationTests {
