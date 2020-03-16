@@ -1,24 +1,29 @@
-package com.example.jsmreader
+package com.example.jmsreader;
 
-package es.sd.jmsreader;
+
 
 import java.util.Properties;
 
 import javax.jms.ConnectionFactory;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.support.destination.DestinationResolver;
 import org.springframework.jms.support.destination.JndiDestinationResolver;
 import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.jndi.JndiTemplate;
 
+import com.listener.FirstJmsConsumer;
+
 @Configuration
 public class AppConfig {
-    
+    private static Logger LOG = LoggerFactory.getLogger(AppConfig.class);  
     // Url to access to the queue o topic
     @Value("${jms.providerUrl}")
     private String providerUrl;
@@ -80,4 +85,6 @@ public class AppConfig {
         dest.setJndiName(destinationName);
         return dest;
     }
+    
+    
 }
